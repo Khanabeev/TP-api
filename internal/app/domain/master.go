@@ -2,6 +2,7 @@ package domain
 
 import (
 	"database/sql"
+	"github.com/Khanabeev/TP-api/pkg/errs"
 )
 
 type Master struct {
@@ -23,4 +24,9 @@ type Master struct {
 	Materials         sql.NullString `db:"materials"`
 	CreatedAt         sql.NullTime   `db:"created_at"`
 	UpdatedAt         sql.NullTime   `db:"updated_at"`
+}
+
+type MasterRepository interface {
+	All() ([]*Master, *errs.AppError)
+	FindById(masterId int) (*Master, *errs.AppError)
 }

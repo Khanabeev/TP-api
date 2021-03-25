@@ -7,12 +7,13 @@ type ServerConfig struct {
 
 // DatabaseConfig - структура для конфигурационного файла базы данных /configs/database.toml
 type DatabaseConfig struct {
-	Host     string
-	Port     string
-	User     string
-	Password string
-	DbName   string
-	SslMode  string
+	Connection string
+	Host       string
+	Port       string
+	User       string
+	Password   string
+	DbName     string
+	SslMode    string
 }
 
 // NewServerConfig - инициализация конфига сервера с базовыми значениями

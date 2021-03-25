@@ -16,7 +16,7 @@ func init() {
 
 	logLevel, exists := os.LookupEnv("LOG_LEVEL")
 	if !exists {
-		logLevel = "debug"
+		logLevel = "info"
 	}
 
 	logConfig := Config{
@@ -37,7 +37,7 @@ func init() {
 
 	log, err = config.Build(zap.AddCallerSkip(1))
 
-	if err !=nil {
+	if err != nil {
 		panic(err)
 	}
 }

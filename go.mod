@@ -6,5 +6,6 @@ require (
 	github.com/BurntSushi/toml v0.3.1
 	github.com/gorilla/mux v1.8.0
 	github.com/joho/godotenv v1.3.0
+	github.com/lib/pq v1.10.0
 	go.uber.org/zap v1.16.0
 )

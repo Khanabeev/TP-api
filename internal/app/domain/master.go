@@ -2,6 +2,8 @@ package domain
 
 import (
 	"database/sql"
+
+	"github.com/Khanabeev/TP-api/internal/app/dto"
 	"github.com/Khanabeev/TP-api/pkg/errs"
 )
 
@@ -28,5 +30,28 @@ type Master struct {
 
 type MasterRepository interface {
 	All() ([]*Master, *errs.AppError)
-	FindById(masterId int) (*Master, *errs.AppError)
+	FindById(id string) (*Master, *errs.AppError)
+}
+
+func (m Master) ToGetMasterByIdResponseDto() dto.GetMasterByIdResponse {
+	return dto.GetMasterByIdResponse{
+		ID:                m.ID,
+		Name:              m.Name,
+		Email:             m.Email,
+		Password:          m.Password,
+		Status:            m.Status,
+		Photo:             m.Photo,
+		Gender:            m.Gender,
+		Description:       m.Description,
+		ExperienceFrom:    m.ExperienceFrom,
+		IsWorkingWithMen:  m.IsWorkingWithMen,
+		HasSingleUseItems: m.HasSingleUseItems,
+		Instagram:         m.Instagram,
+		Education:         m.Education,
+		PhoneNumber:       m.PhoneNumber,
+		HasWhatsapp:       m.HasWhatsapp,
+		Materials:         m.Materials,
+		CreatedAt:         m.CreatedAt,
+		UpdatedAt:         m.UpdatedAt,
+	}
 }

@@ -38,7 +38,6 @@ func (m Master) ToGetMasterByIdResponseDto() dto.GetMasterByIdResponse {
 		ID:                m.ID,
 		Name:              m.Name,
 		Email:             m.Email,
-		Password:          m.Password,
 		Status:            m.Status,
 		Photo:             m.Photo,
 		Gender:            m.Gender,
